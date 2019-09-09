@@ -99,7 +99,7 @@ pipeline {
         }
       }
     }
-     stage('Event-Post-Service-Deployment') { //Dynatrace POST action for deployment Event - requires HTTP Request Plugin
+  stage('Event-Post-Service-Deployment') { //Dynatrace POST action for deployment Event - requires HTTP Request Plugin
 	steps { 
 		script { 
 			def body = """{"eventType": "CUSTOM_DEPLOYMENT", 
@@ -130,7 +130,7 @@ pipeline {
 			}""" 
 		//send json payload - create authentication credential in Jenkins
 		httpRequest acceptType: 'APPLICATION_JSON', 
-		authentication: '130280a2-5e8d-4ab7-8799-fd7ddbca4a21', 
+		authentication: '983d73b3-3777-44ea-8f80-dbe67590bad8', 
 		contentType: 'APPLICATION_JSON', 
 		customHeaders: [[maskValue: true, name: 'Authorization', 
 		value: "Api-Token ${DT_API_TOKEN}"]], 
